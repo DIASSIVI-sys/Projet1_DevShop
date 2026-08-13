@@ -5,13 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevShop</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Barre de navigation (Flexbox) -->
-    <header class="navbar">
+   <header class="navbar">
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="assets/Images/image.jpg" alt="Logo DevShop" style="width: 50px; height: 40px; object-fit: contain;">
         <h1>DevShop</h1>
-        <div class="cart-icon">Panier (<span id="cart-count">0</span>)</div>
-    </header>
+    </div>
+    <div class="cart-icon">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span id="cart-count">0</span>
+    </div>
+</header>
 
         <!-- Filtres par catégorie -->
     <section class="filters" style="text-align: center; margin: 2rem 0;">
@@ -33,11 +40,11 @@
     </main>
 
     <!-- Tiroir Panier (Off-canvas) -->
-<div id="cart-drawer" class="cart-drawer">
-    <div class="drawer-header">
-        <h2>Votre Panier</h2>
-        <button id="close-drawer" class="close-btn">&times;</button>
-    </div>
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="drawer-header">
+            <h2>Votre Panier</h2>
+            <button id="close-drawer" class="close-btn">&times;</button>
+        </div>
     <div id="drawer-items" class="drawer-items">
         <!-- Les articles du panier s'afficheront ici -->
     </div>

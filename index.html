@@ -1,54 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevShop</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Barre de navigation (Flexbox) -->
+
+    <!-- Barre de navigation (Fixe) -->
     <header class="navbar">
-        <h1>DevShop</h1>
-        <div class="cart-icon">Panier (<span id="cart-count">0</span>)</div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="assets/Images/image.jpg" alt="Logo DevShop" style="width: 50px; height: 40px; object-fit: contain;">
+            <h1>DevShop</h1>
+        </div>
+        <div class="cart-icon">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="cart-count">0</span>
+        </div>
     </header>
 
+    
+    <main class="main-content">
+        
         <!-- Filtres par catégorie -->
-    <section class="filters" style="text-align: center; margin: 2rem 0;">
-        <button class="filter-btn" data-category="all">Tous</button>
-        <button class="filter-btn" data-category="electronics">Électronique</button>
-        <button class="filter-btn" data-category="jewelery">Bijoux</button>
-        <button class="filter-btn" data-category="men's clothing">Vêtements Homme</button>
-        <button class="filter-btn" data-category="women's clothing">Vêtements Femme</button>
+        <section class="filters" style="text-align: center; margin: 2rem 0;">
+            <button class="filter-btn active" data-category="all">Tous</button>
+            <button class="filter-btn" data-category="electronics">Électronique</button>
+            <button class="filter-btn" data-category="jewelery">Bijoux</button>
+            <button class="filter-btn" data-category="men's clothing">Vêtements Homme</button>
+            <button class="filter-btn" data-category="women's clothing">Vêtements Femme</button>
+        </section>
 
-    </section>
-    <!-- Barre de recherche -->
-  
-    <div class="search-container">
-        <input type="text" id="search-input" placeholder="Rechercher un produit...">
-    </div>
+        <!-- Barre de recherche -->
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Rechercher un produit...">
+        </div>
 
-    <main class="produits-container" id="produit-grid">
-        <!-- Les cartes produits s'injecteront ici dynamiquement via JS -->
+        <!-- Grille des produits injectée par JS -->
+        <div class="produits-container" id="produit-grid">
+            <!-- Les cartes produits s'injecteront ici dynamiquement -->
+        </div>
+
     </main>
 
     <!-- Tiroir Panier (Off-canvas) -->
-<div id="cart-drawer" class="cart-drawer">
-    <div class="drawer-header">
-        <h2>Votre Panier</h2>
-        <button id="close-drawer" class="close-btn">&times;</button>
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="drawer-header">
+            <h2>Votre Panier</h2>
+            <button id="close-drawer" class="close-btn">&times;</button>
+        </div>
+        <div id="drawer-items" class="drawer-items">
+            <!-- Les articles du panier s'afficheront ici -->
+        </div>
+        <div class="drawer-footer">
+            <p>Total : <span id="drawer-total">0.00</span> $</p>
+            <button id="checkout-btn" class="checkout-btn">Commander</button>
+        </div>
     </div>
-    <div id="drawer-items" class="drawer-items">
-        <!-- Les articles du panier s'afficheront ici -->
-    </div>
-    <div class="drawer-footer">
-        <p>Total : <span id="drawer-total">0.00</span> $</p>
-        <button id="checkout-btn" class="checkout-btn">Commander</button>
-    </div>
-</div>
-<!-- Fond grisé (overlay) -->
-<div id="drawer-overlay" class="drawer-overlay"></div>
-   
+
+    <!-- Fond grisé (overlay) -->
+    <div id="drawer-overlay" class="drawer-overlay"></div>
 
     <script src="script.js"></script>
 </body>

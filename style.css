@@ -6,6 +6,7 @@
 }
 body{
     background-color: #f9f9f9;
+    margin-top: 80px; /* Pour éviter que le contenu ne soit caché derrière la navbar */
 }
 
 /* Flexbox pour la navbar */
@@ -16,9 +17,28 @@ body{
     background-color: #333;
     color: white;
     padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
+#cart-count {
+    font-size: 0.75rem;
+    background-color: #ff4757;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    right: -8px;
+}
+
 .cart-icon {
+    position: relative;
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
 }
 
 .produits-container {
@@ -38,4 +58,143 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+.filter-btn {
+    padding: 0.5rem 1rem;
+    margin: 0.3rem;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #495057;
+    border: 1px solid #ced4da;
+    border-radius: 20px; /* Effet pilule très moderne */
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease-in-out;
+}
+
+.filter-btn:hover {
+    background-color: #e9ecef;
+    border-color: #adb5bd;
+    color: #212529;
+}
+
+.filter-btn.active {
+    background-color: #343a40; /* S'accorde avec le header */
+    color: white;
+    border-color: #343a40;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Style pour la barre de recherche */
+.search-container {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+#search-input {
+    padding: 0.5rem 1rem;
+    width: 300px;
+    max-width: 90%;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#search-input:focus {
+    border-color: #333;
+}
+
+/* Style du Tiroir Panier corrigé */
+.cart-drawer {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 350px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column; /* CORRIGÉ : empile header, items et footer verticalement */
+    transition: right 0.3s ease-in-out;
+}
+
+.cart-drawer.open {
+    right: 0;
+}
+
+.drawer-header {
+    padding: 1.5rem;
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.drawer-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+}
+
+.drawer-footer {
+    padding: 1.5rem;
+    border-top: 1px solid #ddd;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999;
+    display: none;
+}
+
+.drawer-overlay.open {
+    display: block;
+}
+
+/* --- Media Query pour mobiles --- */
+@media (max-width: 768px) {
+    .filter-btn {
+        margin: 4px;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .category-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0 1rem;
+    }
 }

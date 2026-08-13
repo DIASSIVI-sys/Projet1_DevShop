@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevShop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Barre de navigation (Flexbox) -->
+    <header class="navbar">
+        <h1>DevShop</h1>
+        <div class="cart-icon">Panier (<span id="cart-count">0</span>)</div>
+    </header>
+
+        <!-- Filtres par catégorie -->
+    <section class="filters" style="text-align: center; margin: 2rem 0;">
+        <button class="filter-btn" data-category="all">Tous</button>
+        <button class="filter-btn" data-category="electronics">Électronique</button>
+        <button class="filter-btn" data-category="jewelery">Bijoux</button>
+        <button class="filter-btn" data-category="men's clothing">Vêtements Homme</button>
+        <button class="filter-btn" data-category="women's clothing">Vêtements Femme</button>
+
+    </section>
+    <!-- Barre de recherche -->
+  
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Rechercher un produit...">
+    </div>
+
+    <main class="produits-container" id="produit-grid">
+        <!-- Les cartes produits s'injecteront ici dynamiquement via JS -->
+    </main>
+   
+
+    <script src="script.js"></script>
+</body>
+</html>

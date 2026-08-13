@@ -28,7 +28,7 @@
 
 ---
 
-##Installation et Utilisation
+##Installation et Utilisation du projet
 
 1. Clonez ce dépôt ou téléchargez les sources sur votre machine :
    ```bash

@@ -31,6 +31,23 @@
     <main class="produits-container" id="produit-grid">
         <!-- Les cartes produits s'injecteront ici dynamiquement via JS -->
     </main>
+
+    <!-- Tiroir Panier (Off-canvas) -->
+<div id="cart-drawer" class="cart-drawer">
+    <div class="drawer-header">
+        <h2>Votre Panier</h2>
+        <button id="close-drawer" class="close-btn">&times;</button>
+    </div>
+    <div id="drawer-items" class="drawer-items">
+        <!-- Les articles du panier s'afficheront ici -->
+    </div>
+    <div class="drawer-footer">
+        <p>Total : <span id="drawer-total">0.00</span> $</p>
+        <button id="checkout-btn" class="checkout-btn">Commander</button>
+    </div>
+</div>
+<!-- Fond grisé (overlay) -->
+<div id="drawer-overlay" class="drawer-overlay"></div>
    
 
     <script src="script.js"></script>
